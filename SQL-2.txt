@@ -178,6 +178,126 @@ SELECT t.name, g.name
 FROM tracks t
 JOIN genres g ON t.GenreId = g.GenreId; 
 
+-----------------------------------
+LEFT JOIN
+
+SELECT artists.ArtistId, artists.Name,
+albums.AlbumId, albums.Title
+FROM artists
+LEFT JOIN albums ON artists.ArtistId = albums.ArtistId;
+
+
+
+-------------------------------
+SUBQUERY
+
+
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId = (
+	SELECT AlbumId
+	FROM albums
+	WHERE Title = "Faceless");
+
+ALTTAKİ İLE ÜSTTEKİ AYNI SONUCU VERİYOR. BİRİ SUBQUERY İLE DİĞERİ JOIN İLE YAPILMIŞ HALİ
+
+
+SELECT tracks.TrackId, tracks.Name, tracks.AlbumId, albums.AlbumId
+FROM tracks
+JOIN albums ON tracks.AlbumId = albums.AlbumId
+WHERE albums.Title = "Faceless"
+
+= TEK DEĞER VERİR 
+IN ÇOK DEĞER VERİR 
+
+
+
+
+IN İLE YAPILAN SUBQUERY. ÇOKLU GETİRİYOR
+
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId IN (
+	SELECT AlbumId
+	FROM albums
+	WHERE Title IN ("Faceless", "Let There Be Rock"));
+
+
+SELECT InvoiceId, BillingAddress,
+	(SELECT SUM (total)
+	FROM invoices)
+FROM invoices;
+
+
+
+------------------------------
+
+CREATING NEW TABLE 
+
+
+CREATE TABLE YKN_LIST (
+YKNid TEXT,
+N REAL,
+E REAL,
+EL REAL)
+
+CREATE TABLE vacation_plan
+(place_id INT,
+country TEXT,
+hotel_name TEXT,
+employee_id INT,
+vacation_length INT, 
+budget REAL);
+
+INSERTING NEW DATA TO THAT TABLE 
+
+INSERT INTO vacation_plan (place_id, country, hotel_name, employee_id, vacation_length, budget)
+VALUES 
+(1, "USA", "California", 1, 5, 5000),
+(2, "TURKEY", "Hilton", 2, 4, 4000),
+(3, "ENGLAND", "Python", 3, 6, 4500);
+
+
+DELETING DATA FROM TABLE 
+
+DELETE FROM vacation_plan
+WHERE employee_id = 3
+
+
+CONSTRAINTS
+
+
+CREATE TABLE table_name(
+        column_1 INT PRIMARY KEY,
+        column_2 TEXT
+)
+
+CREATE TABLE table_name(
+        column_1 INT NOT NULL
+)
+
+
+CREATE TABLE vacation_plan
+(place_id INT PRIMARY KEY,
+country TEXT,
+hotel_name TEXT NOT NULL,
+EmployeeId INT,
+vacation_length INT,
+budget INT,
+	FOREIGN KEY (EmployeeId)
+	REFERENCES employees);
+
+
+PRIMARY KEY içerde de verebiliyoruz sonda da verebiliyoruz.
+FOREIGN KEY sonunda veriyoruz. Verirken REFERENCES yazmayı unutma.
+
+
+
+
+
+
+
+
 
 
 

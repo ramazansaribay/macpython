@@ -41,3 +41,17 @@ for i in filter(lambda x : len(x)<5, words):
     print(i)
 
 
+with open("dummy.txt", "w", encoding = "utf-8") as file:
+    file.write("This is my first line\nikinci satırım")
+
+
+flowers = ["Jasmine\n", "Rose\n", "Lily\n", "Daisy\n", "Tulip\n"]
+with open("flowers.txt", "w", encoding= "utf-8") as f:
+    f.writelines(flowers)
+
+
+fruits = ["banana", "orange", "apple", "strawberry", "cherry"]
+with open("fruits.txt", "w", encoding = "utf-8") as f:
+    for i in fruits:
+        f.write(i + "\n")
+        f.close

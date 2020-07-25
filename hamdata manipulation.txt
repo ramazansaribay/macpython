@@ -1,0 +1,10 @@
+f = open("raw.txt", "r")
+for line in f:
+    print(line[:-1])
+f.close
+
+f = open("raw.txt", "r")
+for line in f:
+    print(line, end="")
+f.close
+
