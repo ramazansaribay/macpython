@@ -297,7 +297,36 @@ Class:
 Object:
     Ford:
         Properties
-        Methods 
+        Methods
+
+OOP
+To put it concisely, you should remember the following:
+an object-oriented program consists of a set of interacting objects;
+as a rule, the internal state of an object is hidden;
+an object may have characteristics: fields and methods;
+an object is an instance of a class (type);
+a class is a more abstract concept than an individual object; it may be considered a template or blueprint that describes the common structure of a set of similar objects. 
+
+
+CLASS
+
+class Employee:
+
+    def __init__(self, first, last, pay):
+        self.first = first
+        self.last = last
+        self.pay = pay
+        self.all = first + last + ":" + first.lower() + "." + last.lower() + "@company.com"
+
+
+emp_1 = Employee("Ramazan", "SARIBAY", 50000)
+emp_2 = Employee("Asli", "SARIBAY", 60000)
+
+print(emp_1.all)
+print(emp_2.all)
+
+
+
 
 
 
