@@ -291,6 +291,23 @@ budget INT,
 PRIMARY KEY içerde de verebiliyoruz sonda da verebiliyoruz.
 FOREIGN KEY sonunda veriyoruz. Verirken REFERENCES yazmayı unutma.
 
+ALTER TABLE
+
+ALTER TABLE vacation_plan
+ADD column_name data_type;
+
+Sütun ekledi.
+
+ALTER TABLE vacation_plan
+DROP column_name data_type;
+
+Sütun sildi.
+
+ALTER TABLE vacation_plan
+MODIFY column_name data_type;
+
+
+
 
 
 
