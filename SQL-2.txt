@@ -1,0 +1,335 @@
+SELECT * FROM invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2012-01-01'
+ORDER BY InvoiceDate DESC
+LIMIT 1;
+-- datetime
+-- 'YYYY-MM-DD'
+
+---------------------
+
+SELECT * FROM company.emplyoees
+WHERE hire_date BETWEEN '2018-01-01' AND '2019-12-02';
+
+---------------------
+SELECT *
+FROM employees
+WHERE job_title IN ('Data Scientist', 'Business Analyst');
+
+---------------------
+
+SELECT FirstName, LastName 
+FROM customers
+WHERE Country IN ('Beligum', 'Norway', 'Canada', 'USA');
+
+---------------------
+LIKE FUNCTION
+
+SELECT *
+FROM student_info
+WHERE county LIKE 'Wo%';            %geri kalanını dolduruyor.
+
+SELECT first_name
+FROM employees
+WHERE first_name LIKE 'EL_is';        _bu da tek karakter arıyor.
+
+SELECT Name
+FROM tracks
+WHERE Composer LIKE '%Bach%';
+
+---------------------
+AGGREGATE FUNCTION
+AVG numeric
+MIN date string numeric
+MAX date string numeric
+COUNT date string numeric
+SUM numeric
+NULL means no data and is a special value in SQL.
+
+SELECT COUNT(column_name)
+FROM table_name
+
+SELECT COUNT(first_name)
+FROM students_info;
+
+COUNT(*) yazarsan NULL değerleri de kapsar.
+
+AS alias değer atama
+
+
+SELECT COUNT(TrackId)
+FROM tracks;
+
+SELECT COUNT(TrackId) AS count_of_tracks
+FROM tracks;
+
+COUNT(DISTINCT column_name)        unique değerler isterseniz
+
+SELECT COUNT(DISTINCT field) AS count_of_field      buradaki as field ismini yeniden adlandırıyor
+FROM student_info
+
+SELECT COUNT(DISTINCT Composer) AS count_composer
+FROM tracks;
+
+
+SELECT MIN(column_name)
+FROM employees;
+
+SELECT MIN(salary) AS lowest_salary
+FROM employees;
+
+SELECT MIN(hire_date) AS earliest_date
+FROM employees;
+
+SELECT MIN(Miliseconds) AS duration_of_track
+FROM tracks;
+
+
+SELECT MAX(salary) AS highest_salary
+FROM employees;
+
+SELECT Name, MAX(Milisecond) AS longest_track
+FROM tracks;
+
+SELECT MIN(Milisecond) AS min_dur, MAX(Milisecond) AS max_dur
+FROM tracks
+
+SELECT SUM(column_name)
+FROM table_name;
+
+SELECT SUM(salary) AS total_salary
+FROM employees;
+
+SELECT SUM(total)
+FROM invoices;
+
+------------------------------
+
+GROUP BY
+
+SELECT column_1, column_2, aggregate_function(column_3)
+FROM table_name
+GROUP BY column_1
+
+
+
+------------------------------
+
+SELECT Composer, COUNT (*) AS number_of_tracks
+FROM tracks
+WHERE Composer IS NOT NULL
+GROUP BY Composer
+ORDER BY number_of_tracks DESC;
+
+
+SELECT Country, COUNT (*) AS no_of_country
+FROM customers
+WHERE Country IS NOT NULL
+GROUP BY Country
+ORDER BY no_of_country DESC;
+
+
+SELECT Country, State, COUNT (*) AS no_of_country
+FROM customers
+GROUP BY Country
+HAVING no_of_country > 5                                ----- Burada 5ten büyük olanları listeliyor.
+ORDER BY no_of_country DESC;
+
+
+-----------------------------------
+
+MIN
+
+SELECT AlbumId, MIN(Milliseconds) as min_dur
+from tracks
+GROUP BY AlbumId
+ORDER BY min_dur DESC;
+
+
+WHERE clause comes before GROUP BY
+
+-------------------------------------
+
+SUM
+
+
+
+SELECT BillingCountry, SUM(Total) AS total_amount FROM invoices
+GROUP BY BillingCountry
+HAVING total_amount > 100
+ORDER BY total_amount DESC;
+
+
+---------------------------------------
+
+JOINs
+
+INNER JOIN 
+
+SELECT columns
+FROM table_A
+INNER JOIN table_B ON join_conditions     
+
+
+SELECT tracks.name, genres.name
+FROM tracks
+JOIN genres ON tracks.GenreId = genres.GenreId;
+
+SELECT t.name, g.name
+FROM tracks t
+JOIN genres g ON t.GenreId = g.GenreId; 
+
+-----------------------------------
+LEFT JOIN
+
+SELECT artists.ArtistId, artists.Name,
+albums.AlbumId, albums.Title
+FROM artists
+LEFT JOIN albums ON artists.ArtistId = albums.ArtistId;
+
+
+
+-------------------------------
+SUBQUERY
+
+
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId = (
+	SELECT AlbumId
+	FROM albums
+	WHERE Title = "Faceless");
+
+ALTTAKİ İLE ÜSTTEKİ AYNI SONUCU VERİYOR. BİRİ SUBQUERY İLE DİĞERİ JOIN İLE YAPILMIŞ HALİ
+
+
+SELECT tracks.TrackId, tracks.Name, tracks.AlbumId, albums.AlbumId
+FROM tracks
+JOIN albums ON tracks.AlbumId = albums.AlbumId
+WHERE albums.Title = "Faceless"
+
+= TEK DEĞER VERİR 
+IN ÇOK DEĞER VERİR 
+
+
+
+
+IN İLE YAPILAN SUBQUERY. ÇOKLU GETİRİYOR
+
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId IN (
+	SELECT AlbumId
+	FROM albums
+	WHERE Title IN ("Faceless", "Let There Be Rock"));
+
+
+SELECT InvoiceId, BillingAddress,
+	(SELECT SUM (total)
+	FROM invoices)
+FROM invoices;
+
+
+
+------------------------------
+
+CREATING NEW TABLE 
+
+
+CREATE TABLE YKN_LIST (
+YKNid TEXT,
+N REAL,
+E REAL,
+EL REAL)
+
+CREATE TABLE vacation_plan
+(place_id INT,
+country TEXT,
+hotel_name TEXT,
+employee_id INT,
+vacation_length INT, 
+budget REAL);
+
+INSERTING NEW DATA TO THAT TABLE 
+
+INSERT INTO vacation_plan (place_id, country, hotel_name, employee_id, vacation_length, budget)
+VALUES 
+(1, "USA", "California", 1, 5, 5000),
+(2, "TURKEY", "Hilton", 2, 4, 4000),
+(3, "ENGLAND", "Python", 3, 6, 4500);
+
+
+DELETING DATA FROM TABLE 
+
+DELETE FROM vacation_plan
+WHERE employee_id = 3
+
+
+CONSTRAINTS
+
+
+CREATE TABLE table_name(
+        column_1 INT PRIMARY KEY,
+        column_2 TEXT
+)
+
+CREATE TABLE table_name(
+        column_1 INT NOT NULL
+)
+
+
+CREATE TABLE vacation_plan
+(place_id INT PRIMARY KEY,
+country TEXT,
+hotel_name TEXT NOT NULL,
+EmployeeId INT,
+vacation_length INT,
+budget INT,
+	FOREIGN KEY (EmployeeId)
+	REFERENCES employees);
+
+
+PRIMARY KEY içerde de verebiliyoruz sonda da verebiliyoruz.
+FOREIGN KEY sonunda veriyoruz. Verirken REFERENCES yazmayı unutma.
+
+ALTER TABLE
+
+ALTER TABLE vacation_plan
+ADD column_name data_type;
+
+Sütun ekledi.
+
+ALTER TABLE vacation_plan
+DROP column_name data_type;
+
+Sütun sildi.
+
+ALTER TABLE vacation_plan
+MODIFY column_name data_type;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

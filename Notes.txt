@@ -1,0 +1,39 @@
+list
+x = [1, 'mala', 3,14, None, False]      x listesi
+x = list(x)                             x'teki her şeyi listeler birer birer
+x.append('ramo')                        x'e yeni değer ekler
+x.insert(5, 'ramo')                     x'te istenilen indexe yeni değer ekler
+x.remove('ramo')                        x'ten istenilen değeri çıkarır
+x.sort()                                x'teki değerleri alfabetik sıralar
+x.sort(reverse=True)                    x'in descending order
+len(x)                                  x'te bulunan değerlerin sayısını gösterir
+x[1] = "ramo"                           x'te bulunan değerleri, verilen index numarasıyla değiştirir.
+
+Indexing
+x =[[1, 'mala', 3,14, 'ramo', 'cano', None, False]]     x'in içinde bir listeleme daha yapıyor.
+                                        x'in len değeri burada 1'dir. Çünkü küme içinde küme gibi.
+print(x[0][3])                          x'te indexleme yapar. İlk verilenin içine girer, ikinci verileni arar.
+print(x[0][1][[3]])                     x'içinde string olan değerlerde indexlenebilir. Sonuçta harf çıkar.
+
+
+Slicing
+x = [1, 'mala', 3,14, 'ramo', 'cano', None, False]
+print(x[2:5]                            x'index 2'den başla, 5e kadar. 5 dahil değil. 'start' to 'stop-1', by 'step'.
+sequence[start:stop:step]
+x = list(range(50))                     x listesini 0dan 50ye kadar oluşturur.
+x.range(2,5)                            x = 2,3,4
+x[:]                                    x listesi için 0dan başlayıp sonuna kadar
+
+
+Negative Slicing
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(x[::-3])                          x listesinin geriye doğru 3 atlayarak baştan sonra yazdırır.
+                                        -1. değer hep son değerdir.
+
+Tuple
+x = ("rsaribay", 5, "ramocan)           Parantez kullanarak liste yerine tuple oluşturuluyor
+                                        Tuple immutable yani değiştirilemez. append ve remove fonksiyonları çalışmaz.
+                                        Eğer tek elemanlı bir tuple yapacaksan her zaman sonuna , koymayı unutma
+
+
+

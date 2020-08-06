@@ -1,0 +1,142 @@
+----------------------
+STRING FORMATTING
+
+string.format()
+
+var1 = "bla bla" 
+var2 = "bla bla"
+var3 = "Hello, {}, {}".format(var1, var2)
+var3 = "Hello, {0}, {1}".format(var1, var2)         POSITIONAL ARGUMENTS 
+var3 = "Hello, {var2} {var1}".format(var1="bla bla, var2="bla bla")
+
+ykn = "ykn1"
+northing = "4758965.020458"
+easting = "325486.025486"
+print("The Northing of {} is N {} and easting is E {}".format(ykn, northing, easting))
+
+These are Positional Arguments and Keyword Arguments.
+
+f-string Method is;
+var1 = "bla bla" 
+var2 = "bla bla"
+var3 = f"string {var1} {var2}"
+
+Example;
+ykn = "ykn1"
+northing = "4758965.020458"
+easting = "325486.025486"
+print(f"The Northing of {ykn} is N {northing} and easting is E {easting}"
+
+
+--------------------------
+
+MATH OPERATIONS
+
++ ADDITION
+- SUBTRACTION
+* MULTIPLICATION
+/ DIVISION
+** EXPONENT
+
+--------------------------
+TYPE CONVERSION
+int()
+str()
+float()
+
+
+-------------------------
+DATES
+
+from datetime import datetime
+datetime.now is the function to get the current date time
+
+
+TIMEDELTA
+from datetime import datetime, timedelta
+today = datetime.now()
+oneday= timedelta(days=1)
+timedelta(weeks=1)
+yesterday = today - oneday
+print("Yesterday was: " + str(yesterday))
+
+DATETIME.NOW 
+from datetime import datetime
+currnet_date = datetime.now()
+
+print("Day : + str(current_date.day))
+print("Month: + str(current_date.month))
+print("Year: + str(current_date.year))
+
+STRPTIME 
+datetime.strptime(var1, "%d/%m/%Y)
+from datetime import datetime
+x = "HCTM2020Y06M26D11H16M17S---"
+date = datetime.strptime(x, "HCTM%YY%mM%dD%HH%MM%SS")
+print("Time is:  " + str(date))                             RAW DATALARDA KULLANIM
+
+
+
+STATEMENTS
+
+if bla bla:
+    print(bla bla)
+
+
+if bla bla:
+    functionblabla
+else:
+    functionblabla
+
+
+if bla bla:
+    functionblabla
+elif bla bla:
+    functionblabla
+else:
+    fucntionblabla
+
+
+COLLECTION TYPE
+LISTS
+
+empty_list = []
+empty_list.append(any value)
+len()
+empty_list.insert(0, "ramazan")         specify where do you want it to go
+empty_list.sort()                       alphabetical order or smallest to biggest
+
+
+
+DICTIONARY : KEY VALUE PAIRS
+
+person = {"first": "Ramazan}
+person["last"] = "SARIBAY"
+print(person)
+print(person["fisrt])
+
+COLLECTION TYPE
+SET 
+set = {"str", 1, 1.05}
+set = set("str", 1, 1.05)
+
+
+
+LOOPS
+
+for i in val:
+    functionblabla
+
+for name in ["Ramazan", "Asli"]:
+    print(name)
+
+people["ramazan", "asli"]
+for name in people:
+    print(name)
+
+index = 0
+while index <= len(people):
+    print(people[index])
+    index += 1
+
+
