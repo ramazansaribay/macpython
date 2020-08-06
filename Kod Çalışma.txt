@@ -140,3 +140,100 @@ while index <= len(people):
     index += 1
 
 
+
+FUNCTIONS
+
+def function_name():
+    code
+    return
+
+(lambda parameters : expression)(arguments)
+
+lambda x : code
+
+(lambda x: x**2)(2)  # squares '2'
+
+print((lambda x: x**2)(2))
+
+print((lambda x, y: (x+y)/2)(3, 5))  # takes two int, returns mean of them
+
+average = (lambda x, y: (x+y)/2)(3, 5) 
+print(average)
+
+average = lambda x, y: (x+y)/2
+print(average(3, 5))  # we call
+
+
+- Def can hold multiple expressions while lambda is a uni-expression function.
+- Def generates a function and designates a name to call it later. Lambda forms a function        object and returns it.
+- Def can have a return statement. Lambda can’t have return statements. 
+- Lambda supports to get used inside a list and dictionary.
+
+
+no need for return in lambda
+
+lambda x: "odd" if x%2!=0 else "even"
+lambda is an anonymous function. it is one time used function without a name.
+
+
+MAP FUNCTION 
+
+map(function, iterable)
+map(lambda x: x**2, iterable)
+
+letter1 = ['o', 's', 't', 't']
+letter2 = ['n', 'i', 'e', 'w']
+letter3 = ['e', 'x', 'n', 'o']
+numbers = list(map(lambda x,y,z : x+y+z, letter1,letter2,letter3))
+
+map() returns a list of the outputs after applying the given 
+function to each element of a given iterable object such as 
+list, tuple, etc 
+map type is map. you may need to convert it to list or tuple
+
+FILTER FUNCTION 
+
+filter(function, sequence)
+
+first_ten = [0,1,2,3,4,5,6,7,8,9]
+even = list(filter(lambda x: x%2==0, first_ten))
+print(even)
+
+
+
+vowel_list = ['a', 'e', 'i', 'o', 'u']
+first_ten = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+  
+vowels = filter(lambda x: True if x in vowel_list else False, first_ten) 
+
+print('Vowels are :', list(vowels))
+
+
+def modular_function(n):
+    return lambda x: x ** n
+
+def modular_function(n):
+    return lambda x: x ** n
+    
+power_of_2 = modular_function(2)  # first sub-function derived from def
+power_of_3 = modular_function(3)  # second sub-function derived from def
+power_of_4 = modular_function(4)  # third sub-function derived from def
+
+print(power_of_2(2))  # 2 to the power of 2
+print(power_of_3(2))  # 2 to the power of 3
+print(power_of_4(2))  # 2 to the power of 4
+
+
+
+filter() filters the given sequence (iterable objects) with the 
+help of a function (lambda) that tests each element 
+in the sequence to be true or not.
+
+Note that filter() filters each element in the iterable object, 
+depending on whether the function's result is True or False.
+
+filter type is filter. you may need to convert it to list or tuple
+
+
+
+
