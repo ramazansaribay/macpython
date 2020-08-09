@@ -35,5 +35,10 @@ x = ("rsaribay", 5, "ramocan)           Parantez kullanarak liste yerine tuple o
                                         Tuple immutable yani değiştirilemez. append ve remove fonksiyonları çalışmaz.
                                         Eğer tek elemanlı bir tuple yapacaksan her zaman sonuna , koymayı unutma
 
+Uzunluklarına göre string sıralama
+
+city = ["istanbul", "rome", "los angeles", "addis abbaba"]
+m = sorted(city, reverse = True, key = len)
+print(m)
 
 
