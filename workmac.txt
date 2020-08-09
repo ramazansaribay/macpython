@@ -24,3 +24,10 @@ def my_x():
     global x 
     x += 1
     print(x)        THIS WILL WORK.
+
+
+
+FLOAT DATA TYPE MANIPULATION
+amount = 3
+des_amount = ("$%.2f" % amount)
+print(des_amount)
