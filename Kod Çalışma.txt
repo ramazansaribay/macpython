@@ -21,6 +21,13 @@ var1 = "bla bla"
 var2 = "bla bla"
 var3 = f"string {var1} {var2}"
 
+x = 10_000_000_000
+y = 100_000_000
+adding = x + y
+print(f"{adding: ,}") 
+10,100,000,000          sonuç. formatlıyoruz. _ yerine , kullanıyor
+
+
 Example;
 ykn = "ykn1"
 northing = "4758965.020458"
@@ -106,7 +113,8 @@ len()
 empty_list.insert(0, "ramazan")         specify where do you want it to go
 empty_list.sort()                       alphabetical order or smallest to biggest
 
-
+[1, 2, 3, 4] + ["11", "22", 33]
+[1, 2, 3, 4, '11', '22', 33]
 
 DICTIONARY : KEY VALUE PAIRS
 
@@ -234,6 +242,67 @@ depending on whether the function's result is True or False.
 
 filter type is filter. you may need to convert it to list or tuple
 
+SORTED FUNCTION
+
+sorted(iterable, key=key, reverse=reverse)
+
+city = ["istanbul", "rome", "los angeles", "addis abbaba"]
+m = sorted(city, reverse = True, key = len)
+print(m)
+
+LIST.COUNT AND MAX
+
+list.count(value)
+max(iterable, key = function)
+
+numbers = [1, 3, 7, 4, 3, 0, 3, 6, 3, 9, 16]
+m = max(numbers, key = numbers.count)
+n = (numbers.count(m))
+print(f"The number {m} is repeated {n} times")
+
+LIST.INDEX 
+list.index(elmnt)
+samanlık = ["saman", "igne", "tavuk", "inex", "su"]
+o = samanlık.index("igne")
+o
+
+
+DEFINITIONS
+elmnt	Required. Any type (string, number, list, etc.). The element to search for
+
+MULTIPLE ASSIGN  = COKLU DEGER ATAMA
+
+v = ("five", 5, True)
+x, y, z = v
+print(v)
+
+('five', 5, True)
+
+(monday, tuesday, wednesday, thursday, friday, saturday, sunday) = tuple(range(1,8))
 
 
 
+TUPLES
+
+tuple'ın içi değiştirilemiyor fakat içinde liste varsa müdahele edilebiliyor.
+tt = (1, 2, 3, [4, 5, 6])           3. üyesi liste.
+tt[3].append("1")                   listenin içine girip str 1 ekliyor
+(1, 2, 3, [4, 5, 6, '1'])           sonuç
+
+a, _, b, _ = (10, 20, 30, 40)       _ kullanınca pos argument olarak gelen şeyi boş alıyor
+print(a,b)                          a = 10 b= 30 olarak çıkıyor
+10 30
+
+x, y, *z = (11, 22, 33, 44, 55, 66, 77, 88)
+print(x)
+print(y)
+print(z)    [33, 44, 55, 66, 77, 88] sonuç
+
+
+x ve y'ye ilk ikisini atıyor. gerisini * sayesinde z'ye liste olarak atıyor.
+
+x, y, *z, t = (11, 22, 33, 44, 55, 66, 77, 88)
+print(x)    11
+print(y)    22
+print(z)    [33, 44, 55, 66, 77]
+print(t)    88                      sonuncu değeri yine sondakine atıyor.
