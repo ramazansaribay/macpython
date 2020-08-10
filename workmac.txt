@@ -31,3 +31,10 @@ FLOAT DATA TYPE MANIPULATION
 amount = 3
 des_amount = ("$%.2f" % amount)
 print(des_amount)
+
+
+
+
+
+Python Basics-Lab-1-Joseph-22/06/20
+Python Basics-Lab-2-Jason-01/07/20
