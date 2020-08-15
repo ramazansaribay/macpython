@@ -1,4 +1,4 @@
-num = 100
+num = 101
 liste = []
 for a in range(2, num+1):
     for b in range(2, a):
