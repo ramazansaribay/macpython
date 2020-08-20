@@ -3,6 +3,8 @@ WORKING DIRECTORY               STAGING AREA                REPOSITORY
 
 
 mkdir folder            make a folder
+touch file.extension    creates file
+cat file.extension      to see inside of the file
 git init                initialize git
 git status              check the git status of the folder.
 touch files             create a file
