@@ -1,0 +1,32 @@
+grep -c "word"      count
+grep -v
+grep -n
+
+echo $HOME
+printenv HOME 
+
+YENIENVIRONMENT=yenideger
+
+[root@ip-172-31-48-97 ssh]# MYVAR=myvalue
+[root@ip-172-31-48-97 ssh]# echo $MYVAR
+myvalue
+[root@ip-172-31-48-97 ssh]# MYVAR=newvalue
+[root@ip-172-31-48-97 ssh]# echo $MYVAR
+newvalue
+[root@ip-172-31-48-97 ssh]# unset MYVAR
+[root@ip-172-31-48-97 ssh]# echo $MYVAR
+
+
+ export PATH:$PATH/klasöradi    burada açılacak exenin ya da uygulamanın nerede bulunduğu eklersek o dosyayı buralarda arayacak.
+
+DEGISKEN=yeni_deger
+DEGISKEN="yeni degisken" boşlukları da alıyor
+DEGISKEN="$DEGISKEN yeni degisken" $ işareti olan yeri almıyor
+echo '$DEGISKEN'                tek tırnak olunca string gibi alıp kullanıyor.
+echo "path is \$PATH"           \ kendinden sonra gelen karakteri egale ediyor.
+
+
+
+SUDO 
+sudo  superuser do 
+sudo su             su = switch user, superuser oldu. root oldu.
