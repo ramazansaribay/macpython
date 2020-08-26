@@ -1,7 +1,0 @@
-ondülasyon girerek yknlerden düşme
-yknleri ondülasyon düşüldükten sonra xyz olarak liste şeklinde alma
-yknlerin saatlerini otomatik olarak düzenleme
-yknlerin xyz verilerini, verilen değer aralığında değiştirme
-
-
-sıfırdan ykn üretme

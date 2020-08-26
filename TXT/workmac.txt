@@ -1,0 +1,40 @@
+def enclosing_func1():
+    x = 'outer variable'
+    def enclosing_func2():
+        nonlocal x  # its inner-value can be used in the outer scope
+        x = 'inner variable'
+        print("inner:", x)
+    enclosing_func2()
+    print("outer:", x)
+
+enclosing_func1() 
+
+GLOBAL AND LOCAL VAR 
+x = 10
+def my_x():
+    print(x)
+
+x = 10
+def my_x()
+    x += 1
+    print(x)        THIS WONT WORK. YOU CAN NOT CHANGE A GLOBAL IN LOCAL. TRY THE NEXT INSTEAD.
+
+x = 10
+def my_x():
+    global x 
+    x += 1
+    print(x)        THIS WILL WORK.
+
+
+
+FLOAT DATA TYPE MANIPULATION
+amount = 3
+des_amount = ("$%.2f" % amount)
+print(des_amount)
+
+
+
+
+
+Python Basics-Lab-1-Joseph-22/06/20
+Python Basics-Lab-2-Jason-01/07/20

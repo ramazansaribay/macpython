@@ -1,0 +1,17 @@
+from datetime import datetime, timedelta                    import ettin
+x = "HCTM2020Y06M26D11H16M17S"
+date = datetime.strptime(x, "HCTM%YY%mM%dD%HH%MM%SS")       bu ilk okumayı ayrıştırıyor
+print("Time is:  " + str(date))
+
+plustime = timedelta(minutes=89)                    timedelta da ne kadar fark koymak istiyorsan
+
+print(date + plustime)                              ikisini matematiksel işleme sokabiliyorsun
+
+-----------------------------------------
+
+
+
+x.pop()         SON LİSTE ELEMANINI DEVREDEN ÇIKARIYOR
+
+
+-----------------------------------------

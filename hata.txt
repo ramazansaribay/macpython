@@ -1,5 +1,0 @@
-Ramazan,name 'a' is not defined
-Aslı,name 'a' is not defined
-Yusuf,name 'a' is not defined
-Duru,name 'a' is not defined
-Rama,name 'a' is not defined

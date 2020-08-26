@@ -1,0 +1,26 @@
+ENVIRONMENT VARIABLES
+Environment variables are being kept in .bash_profile and can be edit with an editor.
+
+printenv ENV
+printenv HOME
+
+echo $ENV
+echo $HOME
+
+You can create new variable or change the variables.
+export ENV="value"          change the variable
+export TZ="US/Pacific"
+
+VARIABLE=ramocan123         create new variable
+
+unset ENV
+unset TZ
+
+When you type a command, the shell looks for it in the directories specified by your path.
+To check the path of a command you write
+which command
+which echo
+It gives you the directories that the command can be called from.
+
+You can also append a path to any command or file
+export PATH=$PATH:/games/awesome 
