@@ -4,7 +4,11 @@ FROM
 DISTINCT
 LIMIT
 WHERE
+WHERE NOT
 ORDER BY ASC | DESC
+BETWEEN
+NOT BETWEEN
+WHERE x BETWEEN y AND z
 
 
 
@@ -32,4 +36,7 @@ SELECT * FROM students_class WHERE grade > 70 LIMIT 2;  show the first 2 rows, g
 SELECT column_name(s) FROM table_name ORDER BY column_name(s) ASC|DESC;         orders by the givven column as ascending or descending.
 SELECT * FROM tracks ORDER BY name ASC | DESC;                          default is ASC and it can be changed to DESC.
 
-Ex:             SELECT first_name, last_name, job_title, salary FROM employees ORDER BY salary DESC;
+Ex:             SELECT first_name, last_name, job_title, salary FROM employees ORDER BY salary DESC, job_title DESC;
+
+You can take multiple statement in ORDER BY. It moves in accordance with the code.
+
