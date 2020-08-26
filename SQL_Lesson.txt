@@ -9,6 +9,8 @@ ORDER BY ASC | DESC
 BETWEEN
 NOT BETWEEN
 WHERE x BETWEEN y AND z
+WHERE .. IN ()
+WHERE ... LIKE '%...' OR '...%)
 
 
 
@@ -39,4 +41,17 @@ SELECT * FROM tracks ORDER BY name ASC | DESC;                          default 
 Ex:             SELECT first_name, last_name, job_title, salary FROM employees ORDER BY salary DESC, job_title DESC;
 
 You can take multiple statement in ORDER BY. It moves in accordance with the code.
+
+WHERE hire_date BETWEEN '2018-01-01' AND '2018-12-31'                   date search
+
+SELECT *
+FROM student_info
+WHERE state = 'Virginia' AND field IN ('Data Science', 'Data Analysis', 'DevOps')
+
+
+WHERE ..... IN (.......) AND ....... OR .......
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_1 LIKE pattern;
 
