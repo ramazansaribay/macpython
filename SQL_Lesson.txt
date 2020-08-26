@@ -56,6 +56,3 @@ SELECT column_name(s)
 FROM table_name
 WHERE column_1 LIKE pattern;
 
-=======
->>>>>>> 601682e6b20eddc58a203a06f3bfedf9a487061a
->>>>>>> d23957d3eab4834d4ca60764de465093de3459de
