@@ -1,0 +1,61 @@
+---PRICING MODEL INSTANCES---
+
+ON DEMAND INSTANCE
+Pay as you go.
+No commitments.
+Can choose AZ.
+
+RESERVED INSTANCE 
+Commitments. 
+1-3 year commitment.
+A significant discount up tp %75.
+Provide a capacity reservation.
+Can not choose AZ.
+
+SCHEDULED RESERVED INSTANCE
+For 24 years.
+Can not choose AZ.
+
+SPOT INSTANCE
+Set a target price.
+Machine runs till price exceeds.
+%90 cost advantage.
+Flexible jobs.
+
+DEDICATED/HOST INSTANCE
+Instance dedicated to your use.
+Physically seperated.
+
+---PURPOSE MODEL INSTANCES---
+
+GENERAL PURPOSE
+T M A  balance of compute, memory and networking resources. Most commonly used.
+
+COMPUTE OPTIMIZED
+C High performance processors. CPUs.
+
+MEMORY OPTIMIZED
+R X Z U . High performance database, real-time large data analytics high memory usage.
+
+STORAGE OPTIMIZED
+D H I . Sequential read and write access. NoSQL databases. Datawarehouse solutions.
+
+ACCELERATED COMPUTING
+F P G . Machine learning, Deep learning, Calculation, Analysis, Fluid Dynamics.
+
+t           2               micro
+r           5               4xlarge
+Purpose     Generation      Dimension
+
+sudo yum update -y              updates the instance
+sudo yum install httpd -y       installs apache server
+sudo systemctl start httpd      starting apache server   
+sudo systemctl status httpd     make sure it is active running
+
+
+sudo systemctl enable httpd     bu komut stop etsek dahi silinmemesi için.      
+
+
+sudo chmod -R 777 /var/www/html     buraya yetki veriyoruz yazmak için
+var/www/html dosyasına index.html dosyası atarsam test pagei düzenler. yetkimiz var.
+echo "bu benim ilk web sayfam" > /var/www/html/index.html    i

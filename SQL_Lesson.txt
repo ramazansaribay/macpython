@@ -1,3 +1,40 @@
+<<<<<<< HEAD
+Terms Learned;
+SELECT
+FROM
+DISTINCT
+LIMIT
+WHERE
+ORDER BY ASC | DESC
+
+
+
+        students_class
+student     lesson        grade
+----------  ------------  ----------
+Student1    Mathematics   95
+Student2    Literature    65
+Student3    Mathematics   45
+
+
+SELECT student FROM students_class;
+SELECT DISTINCT student FROM students_class;            Writes the repeating lines just for one.
+SELECT * FROM students_class;                           Shows all rows.
+
+SELECT * FROM students_class WHERE grade > 90;          shows the output of the function.
+
+SELECT * FROM students_class LIMIT 3;                   shows the first 3 rows.
+
+Let's combine them.
+
+SELECT * FROM students_class WHERE grade > 70 LIMIT 2;  show the first 2 rows, grades bigger than 70.
+
+
+SELECT column_name(s) FROM table_name ORDER BY column_name(s) ASC|DESC;         orders by the givven column as ascending or descending.
+SELECT * FROM tracks ORDER BY name ASC | DESC;                          default is ASC and it can be changed to DESC.
+
+Ex:             SELECT first_name, last_name, job_title, salary FROM employees ORDER BY salary DESC;
+=======
 Terms Learned;
 SELECT
 FROM
@@ -42,6 +79,7 @@ Ex:             SELECT first_name, last_name, job_title, salary FROM employees O
 
 You can take multiple statement in ORDER BY. It moves in accordance with the code.
 
+<<<<<<< HEAD
 WHERE hire_date BETWEEN '2018-01-01' AND '2018-12-31'                   date search
 
 SELECT *
@@ -55,3 +93,6 @@ SELECT column_name(s)
 FROM table_name
 WHERE column_1 LIKE pattern;
 
+=======
+>>>>>>> 601682e6b20eddc58a203a06f3bfedf9a487061a
+>>>>>>> d23957d3eab4834d4ca60764de465093de3459de
