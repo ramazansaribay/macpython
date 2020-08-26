@@ -12,5 +12,5 @@ for line in x:
         for deger in degerlerim:
             if deger.startswith("EL"):
                 d = float(d[4:]) - float(ond)
-                print (line, format(d,'.6f'))  # format ve '.6f' noktadan sonra kaç hane geleceğini göstermeme yarıyor..
+                print (line, format(d,'.6f'))  # format ve '.6f' noktadan sonra kaç hane geleceğini göstermeme yarıyor...
                 
