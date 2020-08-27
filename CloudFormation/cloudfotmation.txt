@@ -1,0 +1,4 @@
+Bununla bir template oluşturuyoruz. Bu bize hazır sistem oluşturma imkanı sağlıyor.
+
+Mesela EC2 bir comptuter canlandıracağız. Özelliklerini YAML dosyası ile oluşturuyoruz.
+
