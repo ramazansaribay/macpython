@@ -1,0 +1,28 @@
+Connection always can be achieved by protocols.
+
+---APPLICATION LAYER---
+
+---TRANSPORT LAYER---
+TCP and UDP are the main protocols.
+TCP cuts the data into segments.
+TCP data is segment. UDP data is datagram.
+TCP connection-oriented, UDP not.
+
+IP Software/Logical address
+MAC Physical address
+
+ICMP Internet Control MEssage Protocol. Status information sent by servers.
+
+ARP (Address Resolution Protocol) Matching ip and mac address.
+Reverse ARP. I ask for my IP to my network and get response.
+
+IP ADDRESS 
+octet = 8 bit
+
+local host 127.0.0.1
+any host on network 0.0.0.0
+
+
+If DHCP server is not available the pc using windows uses a service named APIPA assigns an IP.
+
+EUI-64 IPv6 version of APIPA. It is created by th emac address of the pc.

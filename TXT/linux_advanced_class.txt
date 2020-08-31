@@ -1,5 +1,5 @@
 grep -c "word"      count
-grep -v
+grep -v "word"      select line that do not contain match of supplied patttern
 grep -n
 
 echo $HOME
@@ -30,3 +30,66 @@ echo "path is \$PATH"           \ kendinden sonra gelen karakteri egale ediyor.
 SUDO 
 sudo  superuser do 
 sudo su             su = switch user, superuser oldu. root oldu.
+
+whoami          the active user
+
+who             the active users
+
+w               shows who is logged and what is he doing
+
+id              gives the id
+
+id username
+
+su - username    changes the user to given username. environment variable changes too if you use "-"
+
+sudo su
+sudo su -
+
+exit            will exit from root to user
+
+
+/etc/passwd     the default bash of the users
+
+cat /etc/passwd
+
+useradd -m  forcing the creation of home directory
+useradd -d  setting the name of home directory
+useradd -c  is used for setting description  
+
+adduser     a script to add user
+
+
+sudo userdel username   deletes the user but the home directory files remain
+
+sudo userdel -r username        deletes ewverything about the user
+
+su      switch user
+
+sudo su username        switch user
+
+passwd                  change the password for the user 
+
+
+sudo username passwd    changes the password of the given user
+
+/etc/shadow             the passwords are kept in here as encrypted
+
+sudo cat /etc/shadow
+
+/etc/login.defs         the adjustments for the new users.
+
+groupadd groupname      adds new group
+
+cat /etc/group          shows the groups
+
+groupmod -n [newname] [oldname]
+
+groupdel [groupname]
+
+gpasswd -a username group   will add the user to the group
+
+gpasswd -d username group   will delete the user from the group
+
+groups username             gives the username's groups 
+

@@ -1,0 +1,23 @@
+Login to AWS
+
+Search for IAM service
+
+Dashboard
+
+Create an IAM user
+
+Manage Password Policy
+
+Create Group
+
+Billing is a service of AWS.
+After logging as root account, you can manage Billing Information from My Account.
+
+Users Access Keys are in Users Security Credentials
+
+
+Admin User - Full Auth
+Power User = Admin User - (Billing + IAM)
+
+
+Root > Admin User > Power User

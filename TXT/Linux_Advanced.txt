@@ -24,3 +24,11 @@ It gives you the directories that the command can be called from.
 
 You can also append a path to any command or file
 export PATH=$PATH:/games/awesome 
+
+ 
+
+
+
+
+
+
