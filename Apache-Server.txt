@@ -1,0 +1,5 @@
+sudo yum update                         updates the shell
+sudo yum -y install httpd -y            install httpd server. this is the server
+sudo systemctl start httpd              start the server
+sudo systemctl status                   status of the server 
+sudo systemctl enable httpd             if I stop it, please install these again.
