@@ -1,0 +1,26 @@
+IP-----ARP Table-------MAC Address
+
+
+ARP table keeps the ip and mac address info.
+
+Source IP           x.x.x.x
+Source Subnet Mask  x.x.x.x
+AND ile bak
+Network ID          x.x.x.x
+
+Destination IP      x.x.x.x
+Source Subnet Mask  x.x.x.x
+AND ile bak
+Network IP          x.x.x.x         If the network ids same, it means they are on the same network.
+
+
+CIDR
+192.168.1.142/24
+11111111.11111111.11111111.00000000
+    8       8       8           0   = 24
+
+VLSM
+149.12.0.0 /16
+diyelimki bu verildi bize. İstanbul ofisi diyorki sen ilk 19bite dokunma
+149.12.0.0 /19 bu oldu.
+Variable Length Subnet Mask
