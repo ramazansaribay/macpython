@@ -1,0 +1,111 @@
+lsblk                           disks and partitions
+
+
+create a volume 
+
+make sure that the volume and the instance are on the same AZ 
+
+attach the volume to the instance 
+
+
+
+sudo file -s /dev/xvdf          to check the format of the disks
+
+sudo mkfs -t ext4               to format the disk 
+
+sudo mkdir /mnt/2nd-volume/     new directory under mnt
+
+mount /dev/xvdf /mnt/2nd-volume mounting the new volume
+
+lsblk                           to check the disk again
+
+df                              to show the files related to filesystem
+
+
+Under Amazon/EC2/Volumes, change the created volume's size to 4GB.
+
+lsblk                           check the new volume if it is turned to 4GB
+
+df -h                           to check the new disk file system, you will see the disk as 2GB
+
+sudo resize2fs /dev/xvdf        to resize the new disk
+
+df -h                           to check the new disk again 
+
+sudo reboot now                 to reboot the instance
+
+After reboot, we need to mount the disk again.
+
+sudo mount /dev/xvdf /mnt/2nd-volume/   to mount the same disk again
+
+Under Amazon/EC2/Volumes, create a new volume of 2GB.
+
+lsblk                           check the new disk.
+
+df -h                           check the file system again.
+
+sudo fdisk -l                   formation status of the current disks.
+
+sudo fdisk /dev/xvdg            to create a partition in the new volume which is xvdg 
+
+entered in the fdisk menu
+
+n                               for new partition
+
+p                               for primary
+
+1-4                             partition no
+
+First sector size: Default size 2048
+
+Last sector size: 2100000
+
+Let's create another partition 
+
+n                               for new partition
+
+p                               for primary
+
+2-4                             partition no
+
+First sector:                   choose the default as this is the second partition 
+
+Last sector:                    choose the default as this is the second partition 
+
+w                               will save the changes and quit.
+
+We need to format these partitions.
+
+sudo mkfs -t ext4 /dev/xvdg1                    formatted the first partition
+
+sudo mkfs -t ext4 /dev/xvdg2                    formatted the second partition
+
+sudo mkdir /mnt/3rd-volume-part1/               creating mount folder under /mnt folder   
+
+sudo mkdir /mnt/3rd-volume-part2/               creating mount folder under /mnt folder   
+
+sudo mount /dev/xvdg1 /mnt/3rd-volume-part1     mounting first partition to the /mnt/folder 
+
+sudo mount /dev/xvdg2 /mnt/3rd-volume-part2     mounting first partition to the /mnt/folder 
+
+We now get back to Amazon/EC2/Volume and changed this partitioned volume size from 2GB to 3GB.
+
+sudo growpart /dev/xvdg 2
+
+sudo resize2fs /dev/xvdg2
+
+cd /etc
+
+sudo cp fstab fstab.bak                         created a backup 
+
+edit fstab file with an editor
+
+/dev/xvdf                            /mnt/2nd-volume     ext4    defaults,nofail   0   0
+/dev/xvdg1                           /mnt/3rd-volume-part1 ext4  defaults,nofail   0   0
+/dev/xvdg2                           /mnt/3rd-volume-part2 ext4  defaults,nofail   0   0
+
+
+
+
+
+

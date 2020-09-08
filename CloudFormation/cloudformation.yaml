@@ -13,7 +13,8 @@ Resources:
       - ramo-cf-sg
       Tags:
         - Key: Name
-          Value: ram-cf-instance 
+          Value: ram-cf-instance
+           
 
 
 

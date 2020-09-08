@@ -25,6 +25,26 @@ It gives you the directories that the command can be called from.
 You can also append a path to any command or file
 export PATH=$PATH:/games/awesome 
 
+
+sudo yum install git
+sudo apt install git
+
+sudo yum remove git
+sudo yum autoremove git
+
+sudo yum info git
+sudo apt info git
+
+sudo apt remove git
+sudo apt autoremove git
+
+sudo yum list installed
+
+
+sudo yum --showduplicates list git
+
+
+
  
 
 

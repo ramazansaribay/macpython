@@ -1,0 +1,13 @@
+#! /bin/bash
+sudo yum update -y
+sudo yum install python3 -y
+sudo pip3 install flask
+cd home/ec2-user/
+wget https://raw.githubusercontent.com/ramazansaribay/ram_projects/master/python/hands-on/flask-02-handling-routes-and/app.py
+mkdir templates
+cd templates
+wget https://raw.githubusercontent.com/ramazansaribay/ram_projects/master/python/hands-on/flask-02-handling-routes-and/templates/evens.html
+wget https://raw.githubusercontent.com/ramazansaribay/ram_projects/master/python/hands-on/flask-02-handling-routes-and/templates/list100.html
+wget https://raw.githubusercontent.com/ramazansaribay/ram_projects/master/python/hands-on/flask-02-handling-routes-and/templates/greet.html
+cd ..
+sudo python3 app.py

@@ -1,0 +1,8 @@
+Create a snapshot of the instance.
+Create a AMI(image) from the snapshot.
+Launch instance;
+Choose My AMIs
+
+Create AMI directly from instance
+
+Create AMI from Volume of an Instance 

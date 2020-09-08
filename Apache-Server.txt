@@ -8,10 +8,11 @@ sudo chmod -R 777 /var/www/html         gives authorization of rwe
 
 USER DATA       if you use this before launching the instance, you do not have to do each step. Just copy the commands here. Do it as once.
 #!/bin/bash
+
 yum update
-yum install httpd -you
+yum install httpd -y
 DATE_TIME='date'
-echo <!DOCTYPE html>
+echo "<!DOCTYPE html>
 <html>
   <head>
     <title>
@@ -69,6 +70,6 @@ echo <!DOCTYPE html>
     <hr>
     
    </body>
-</html> >/var/www/html/index.html
+</html>" >/var/www/html/index.html
 systemctl start httpd
 systemctl enable httpd
