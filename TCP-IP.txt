@@ -26,3 +26,45 @@ any host on network 0.0.0.0
 If DHCP server is not available the pc using windows uses a service named APIPA assigns an IP.
 
 EUI-64 IPv6 version of APIPA. It is created by th emac address of the pc.
+
+
+NETWORK TROUBLESHOOTING
+ping
+traceroute          for linux 
+tracrt              for windows
+pathping            for windows. it is a combination of tracert and ping.
+ipconfig            for windows. configuration of the current network.
+ifconfig            for linux. configuration of current network
+iptables            for linux. Iptables  and ip6tables are used to set up, maintain, and inspect the tables of IPv4 and IPv6 packet filter rules in the Linux kernel.
+nslookup            search for the ip address of the address
+get_digit           detailed nslookup
+mtr                 detailed traceroute
+nmap                port scanner 
+
+route add
+route delete
+route change
+route print 
+
+iptable and route are the most important commands for firewall
+
+netstat             network status
+tcpdump             the whole traffic on the interface.
+ftp                 file transfer protocols.
+ftp get
+ftp put
+
+telnet              to connect to a remote host. unsecure.
+ssh                 to connect to a remote host. secure.
+
+scp                 to send and receive file with ssh port. Secure Copy
+
+scp -i newram.pem test.txt ec2-ram@ip...com:/home/ec2-user/         for file
+scp -i newram.pem -r test ec2-ram@ip...com:/home/ec2-user/          for folder
+
+curl                like scp. unsecure.
+
+
+
+
+

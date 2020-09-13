@@ -1,0 +1,92 @@
+ENVIRONMENT VARIABLES
+Environment variables are being kept in .bash_profile and can be edit with an editor.
+
+printenv ENV
+printenv HOME
+
+echo $ENV
+echo $HOME
+
+You can create new variable or change the variables.
+export ENV="value"          change the variable
+export TZ="US/Pacific"
+
+VARIABLE=ramocan123         create new variable
+
+unset ENV
+unset TZ
+
+When you type a command, the shell looks for it in the directories specified by your path.
+To check the path of a command you write
+which command
+which echo
+It gives you the directories that the command can be called from.
+
+You can also append a path to any command or file
+export PATH=$PATH:/games/awesome 
+
+
+sudo yum install git
+sudo apt install git
+
+sudo yum remove git
+sudo yum autoremove git
+
+sudo yum info git
+sudo apt info git
+
+sudo apt remove git
+sudo apt autoremove git
+
+sudo yum list installed
+
+
+sudo yum --showduplicates list git
+
+
+cat 
+tac 
+tee 
+
+cat ramo.txt | tee ramo2.txt        pipeline. tee commands takes the first command's result and save it to a new file you named it.
+
+cut -d' ' -f1                       -d is delimeter. write something inside ''. -f is the field. Enter the number of the field you want to show.
+
+
+tr abc dfg                          will change abc to dfg
+tr -d abc                           will delete abc 
+td [a-z] [A-Z]                      will change lower case to upper case
+
+wc file                             will check for lines, characters
+
+
+sort file                           will sort the file
+sort -r file                        will sort the file reverse 
+sort file | uniq 
+
+cat > countries.csv 
+Country, Capital, Continent
+USA, Washington, North America
+France, Paris, Europe
+Canada, Ottawa, North America
+
+cut -d',' -f3 countries.csv | tail -4 | sort | uniq | tee continents.txt
+
+cat continents.txt
+
+
+;                                   with semicolon, you can combine different commands in one line one by one consecutively. will wait for the previous commands to be completed.
+&                                   will use the commands without waiting for other command to be completed.
+$?                                  will check for the command to be completed or not. If completed result will be 0, if not it will be different from 0.
+&& double ampersand                 if the first command works, the second will work.
+|| double vertical bar              if the first command works, second will not. if the first command does not work, the second will.
+#                                   comment 
+\                                   escape character. can bu used as a new line.
+
+ 
+
+
+
+
+
+
