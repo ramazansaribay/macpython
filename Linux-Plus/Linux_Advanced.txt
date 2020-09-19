@@ -83,7 +83,189 @@ $?                                  will check for the command to be completed o
 #                                   comment 
 \                                   escape character. can bu used as a new line.
 
+
+---SCRIPTING---
+
+create a file.sh
+to make this file executable; 
+chmod +x file.sh
+linuxconfig.org:$ ./hello-world.sh
+
+#!/bin/bash
+echo "Hello World"
+#declare a string variable 
+STRING="Hello World"
+echo $STRING
+
+
+#! /bin/bash
+clear
+echo "Enter your age"
+read  st1
+echo "Your age: " $st1
+
+
+
+NAME="John"
+echo "Hi $NAME"  #=> Hi John
+echo 'Hi $NAME'  #=> Hi $NAME
+
+echo {A,B}.js
+{A,B}   Same as A B
+{A,B}.js    Same as A.js B.js
+{1..5}  Same as 1 2 3 4 5
+
+
+$ echo {I,want,my,money,back}
+I want my money back
+
+$ echo _{I,want,my,money,back}
+_I _want _my _money _back
+
+$ echo {I,want,my,money,back}_
+I_ want_ my_ money_ back_
+
+$ echo _{I,want,my,money,back}-
+_I- _want- _my- _money- _back-
+
+
+# Single line comment  
+: '
+This is a  
+multi-line  
+comment
+'
+
+
+Command	Operation
+-lt	    <
+-gt	    >
+-le	    <=
+-ge	    >=
+-eq	    ==
+-ne	    !=
+
+#!/bin/bash
+for i in $( ls ); do
+   echo item: $i
+done
+
+for service in S3 EC2 Lambda Glacier CloudFront Kinesis
+do
+  echo "Amazon Service: $service"
+done
+
+#!/bin/bash 
+     COUNTER=0
+     while [  $COUNTER -lt 10 ]; do
+         echo The counter is $COUNTER
+         let COUNTER=COUNTER+1 
+     done
+
+      Until sample
+     #!/bin/bash 
+     COUNTER=20
+     until [  $COUNTER -lt 10 ]; do
+         echo COUNTER $COUNTER
+         let COUNTER-=1
+     done
+
+
+
+#!/bin/bash
+
+function quit {
+   exit
+}
+
+function hello {
+   echo Hello!
+}
+
+ hello
+ quit
+
+ echo foo 
+
+
+case EXPRESSION in
+
+  PATTERN_1)
+    STATEMENTS
+    ;;
+
+  PATTERN_2)
+    STATEMENTS
+    ;;
+
+  PATTERN_N)
+    STATEMENTS
+    ;;
+
+  *)
+    STATEMENTS
+    ;;
+esac
  
+
+
+
+#!/bin/bash
+inputs(){
+     read -p "Enter first integer: " int1
+    read -p "Enter second integer: " int2
+}
+
+exitPrompt(){
+    read -p "Do you wish to continue? [y]es or [n]o: " ans
+    if (( $ans == "n"))
+    then
+        echo "Exiting the script. Have a nice day!"
+        sleep 2
+        exit
+    else
+        continue
+    fi
+}
+
+
+while(true)
+    do
+    clear
+    printf "Choose from the following operations: \n"
+    printf "[a]Addition\n[b]Subtraction\n[c]Multiplication\n[d]Division\n"
+    printf "################################\n"
+    read -p "Your choice: " choice
+
+    case $choice in
+    [aA])
+        inputs
+        res=$((int1+int2))
+    ;;
+
+    [bB])
+        inputs
+        res=$((int1-int2))
+    ;;
+
+    [cC])
+        inputs
+        res=$((int1*int2))
+    ;;
+
+    [dD])
+        inputs
+        res=$((int1/int2))
+    ;;
+
+    *)
+        res=0
+        echo "wrong choice!"
+    esac
+
+    echo "The result is: " $res
+    exitPrompt
+done
 
 
 
